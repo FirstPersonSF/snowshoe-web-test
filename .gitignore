@@ -1,0 +1,8 @@
+.DS_Store
+npm-debug.log
+node_modules
+public/assets/libs
+data/db
+**/css/.sass-cache/**
+**/.sass-cache
+style.scssc

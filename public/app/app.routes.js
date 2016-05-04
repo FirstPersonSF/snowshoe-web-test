@@ -16,7 +16,8 @@ define([
         // home state
         .state('home', {
           url: '/',
-          templateUrl: 'app/views/pages/home.html'
+          templateUrl: 'app/views/pages/home.html',
+          controller: 'HomeController as home'
         })
 
       $locationProvider

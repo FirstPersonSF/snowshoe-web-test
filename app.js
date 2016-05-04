@@ -49,6 +49,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ======================================
 
 // base route
+// API route
+var apiV1Route = require('./app/routes/apiV1');
+app.use('/api/v1', apiV1Route);
+
 // needs to be registered AFTER the API routes
 var defaultRoute = require('./app/routes/default');
 app.use('/', defaultRoute);

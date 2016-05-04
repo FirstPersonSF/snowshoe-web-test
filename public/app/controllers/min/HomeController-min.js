@@ -1,0 +1,1 @@
+define(["app"],function(o){"use strict";return o.controller("HomeController",function(o,e,n,c){console.log("Inside home"),c.get("/api/v1/stamp",{}).success(function(o){console.log("Success")})})});

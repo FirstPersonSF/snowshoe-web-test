@@ -1,5 +1,5 @@
 {
-  "name": "MEAN application",
+  "name": "mean-application",
   "version": "0.0.1",
   "authors": [
     "Author <author@domain.com>"
@@ -24,5 +24,6 @@
     "requirejs-domready": "~2.0.1",
     "angular": "~1.4.0",
     "angular-ui-router": "~0.2.15"
-  }
+  },
+  "directory" : "public/assets/libs"
 }

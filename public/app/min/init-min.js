@@ -1,0 +1,1 @@
+define(["angular","app","app-routes","HomeController"],function(o){"use strict";return require(["domReady!","bootstrap"],function(r){o.bootstrap(r,["app"])})});

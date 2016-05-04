@@ -18,6 +18,7 @@ require.config({
     init: '../../app/init',
     app: '../../app/app',
     'app-routes': '../../app/app.routes',
+    HomeController: '../../app/controllers/HomeController',
   },
 
   shim: {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Time Saver</title>
+    <title>SnowShoe test</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,22 +15,63 @@
     <meta name="fragment" content="!">
 
     <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/snowshoe-sample.css">
     <link rel="stylesheet" href="/assets/libs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
 
     <!-- Scripts -->
+    <script src="/assets/libs/jquery/dist/jquery.min.js"> </script>
     <script src="/assets/libs/modernizr/modernizr.js"></script>
+
 
   </head>
   <body>
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <section ui-view autoscroll="false">
+    <!-- <section ui-view autoscroll="false">
         <h1>Waiting for angular to load...</h1>
-    </section>
+    </section> -->
+    <h1 id="heading">Snowshoe Stamp</h1>
+    <div id="snowshoe-messages"></div>
+    <div id="snowshoe-progress-bar"></div>
+    <div id="stamp-screen">
+    </div>
 
     <!-- Scripts -->
+   <script>
+        var stampScreenInitData = {
+          "postUrl": "/api/v1/stamp",
+          "stampScreenElmId": "stamp-screen",
+          "progressBarOn": true,
+          "messages": {
+            "userTraining" : "<h3>Keep holding</h3>",
+            "insufficientPoints" : "<h3>Try again!</h3>"
+          },
+          "postViaAjax": true,
+          "success": function(response){
+            // handle success
+            console.log("Success!");
+            // clear screen
+            $('#snowshoe-progress-bar').removeClass("snowshoe-progress-bar");
+            $("#snowshoe-messages").empty();
+            if(response.serial) {
+              $("#snowshoe-messages").append("<h3>Snowshoe Found </h3><h2>Serial Number: " + response.serial + "</h2>");
+            }
+          },
+          "error": function(response){
+            // handle failure
+            console.log(" Failure ");
+            // clear screen
+            $('#snowshoe-progress-bar').removeClass("snowshoe-progress-bar");
+            $("#snowshoe-messages").empty();
+            // show failure message
+            $("#snowshoe-messages").append("<h3>Sorry! Invalid Snowshoe</h3>");
+
+          }
+        }
+    </script>
+    <script src="/assets/libs/jquery.snowshoe.js"> </s cript>
     <script src="/assets/js/plugins.js"></script>
     <script type="text/javascript" data-main="assets/js/main" src="/assets/libs/requirejs/require.js"></script>
 

@@ -1,7 +1,8 @@
 define([
   'angular',
   'app',
-  'app-routes'
+  'app-routes',
+  'HomeController'
 ], function (angular) {
   'use strict';
 
