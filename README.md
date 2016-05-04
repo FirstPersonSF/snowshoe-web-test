@@ -1,2 +1,2 @@
-# mean-starter
-This is a starter kit for MEAN stack applications
+# snowshoe-web-test
+This is a snowshoe-web-test
