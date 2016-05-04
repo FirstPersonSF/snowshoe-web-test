@@ -27,9 +27,9 @@ var mongooseOptions = {
     }
   }
 };
-var mongodbUri = process.env.MONGODB_URI || process.env.MONGOLAB_URI;
-var mongooseUri = uriUtil.formatMongoose(mongodbUri);
-mongoose.connect(mongooseUri, mongooseOptions);
+// var mongodbUri = process.env.MONGODB_URI || process.env.MONGOLAB_URI;
+// var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+// mongoose.connect(mongooseUri, mongooseOptions);
 
 // import all models
 require('./app/models/index');
