@@ -27,8 +27,16 @@ router.use(function (req, res, next) {
 router.route('/stamp')
   .post(function (req, res, next) {
 
+    if (req.body == null || req.body.data == null){
+      res.status(403).json({
+        success: false,
+        message: 'Parameter data not found'
+      });
+    }
+
     var client = new snowshoe.client("9f05abc3838c0f8131ae", "27f02f032d04a0068cd5ac9cd973ad2e4b88c44f");
     var data = {data: req.body.data};
+    console.log("Data : ", data);
 
     client.post(data, function(error, data, oauthResponse){
       // add conditional logic based on OAuth's response
